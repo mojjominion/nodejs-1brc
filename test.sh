@@ -28,6 +28,6 @@ for sample in $(ls src/test/resources/samples/*.txt); do
   rm -f measurements.txt
   ln -s $sample measurements.txt
 
-  diff <("./calculate_average_$1.sh") ${sample%.txt}.out
+	git diff --color-words <("./calculate_average_$1.sh") ${sample%.txt}.out
 done
 rm measurements.txt
